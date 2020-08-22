@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="sprite_cutter", # Replace with your own username
+    name="sprite_cutter",
     version="0.0.1a",
     author="Daniel Alarcon",
     author_email="dfa238@nyu.edu",
