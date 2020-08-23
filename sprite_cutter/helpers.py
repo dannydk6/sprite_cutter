@@ -1,6 +1,6 @@
 from functools import wraps
 from time import time
-from .sprite_cutter import find_sprites
+from .find_sprites import find_sprites
 
 def timing(f):
     @wraps(f)

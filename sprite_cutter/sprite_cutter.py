@@ -6,8 +6,8 @@ import numpy as np
 from pathlib import Path
 from .classes import Rectangle, Point
 
-def new_path_name(sheet_path):
-    return f"sprites/{sheet_path.split('.png')[0].split('sheets/')[1]}"
+def new_path_name(sheet_path, base_path='.'):
+    return os.path.join(base_path, 'sprites', Path(sheet_path).stem)
 
 def remove_bgColor(img, bgColor):
     new_img = copy.deepcopy(img)
@@ -27,7 +27,7 @@ def subset_image(image, rect):
 def add_boxes(image, spriteRectangles, color=None):
     if color is None:
         color = np.array([255,60,60,255]) # cyan
-    print(color)
+    #print(color)
     wimage = copy.deepcopy(image)
     for i, rect in enumerate(spriteRectangles):
         if rect.width > 0 and rect.height > 0:
